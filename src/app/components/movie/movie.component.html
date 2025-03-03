@@ -21,17 +21,16 @@
       </div>
     </div>
   </nav>
-
   <div class="movie-details-page">
-    <div
-      class="movie-header"
-      [style.backgroundImage]="'url(' + movie?.imageUrl + ')'"
-    >
+    <div class="movie-header">
       <div class="movie-header-content">
-        <h1 class="movie-title">{{ movie.title }}</h1>
-        <p class="movie-tagline">{{ movie.tagline }}</p>
         <div class="movie-actions">
-          <div class="movie-rating">
+          <img
+            [src]="movie.imageUrl"
+            alt="{{ movie.title }}"
+            class="movie-poster"
+          />
+          <button class="rate-btn">
             <svg
               width="31"
               height="30"
@@ -44,10 +43,14 @@
                 fill="#F5BD02"
               />
             </svg>
-            &nbsp; {{ movie.rating }}
-          </div>
+            &nbsp; Rate This
+          </button>
           <button class="add-watchlist-btn">Add to Watchlist</button>
         </div>
+      </div>
+      <div class="movie-header-content">
+        <h1 class="movie-title">{{ movie.title }}</h1>
+        <p class="movie-description">{{ movie.description }}</p>
       </div>
     </div>
 
@@ -92,7 +95,14 @@
 
       <div class="tab-content">
         <div class="overview-tab" *ngIf="activeTab === 'overview'">
-          <p>{{ movie?.description }}</p>
+          <div class="overview-cards">
+            <div class="overview-card">
+              <p>{{ movie.rating }} ({{movie.usersRating}})</p>
+            </div>
+            <div class="overview-card">
+              <p>({{ movie.watchlist }})</p>
+            </div>
+          </div>
         </div>
 
         <div class="cast-tab" *ngIf="activeTab === 'cast'">

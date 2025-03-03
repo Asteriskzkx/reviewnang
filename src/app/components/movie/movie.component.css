@@ -12,41 +12,48 @@ body {
 .nav-link {
   margin-right: 15px;
 }
-.btn-signup {
-  background-color: #1877f2;
-  border-color: #1877f2;
-  color: white;
-}
 .navbar-nav {
   margin-left: auto;
 }
 .navbar-brand {
   margin-right: 15px;
 }
+
 .movie-details-page {
   color: white;
-  padding-top: 20px;
 }
 
 .movie-header {
-  height: 400px;
-  background-size: cover;
-  background-position: center;
+  background-color: white;
+  height: 510px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: flex-start;
+  justify-content: start;
+  text-align: left;
+  position: relative;
+  /* padding-top: 20px; */
 }
 
 .movie-header-content {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 10px;
+  color: #2c3e50;
+  padding: 15px;
 }
 
 .movie-title {
+  font-weight: bold;
   font-size: 2.5em;
   margin-bottom: 10px;
+}
+
+.movie-poster {
+  width: 270px;
+  height: 415px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-description {
+  font-weight: bold;
 }
 
 .movie-tagline {
@@ -56,17 +63,41 @@ body {
 
 .movie-actions {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.movie-rating {
+.movie-actions img {
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-actions .rate-btn,
+.movie-actions .add-watchlist-btn {
+  margin-bottom: 7px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rate-btn {
+  background-color: #ec294b;
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .add-watchlist-btn {
   background-color: #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -75,6 +106,7 @@ body {
 }
 
 .tabs {
+  background-color: white;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -82,20 +114,54 @@ body {
 
 .tab-btn {
   background-color: transparent;
-  color: white;
+  color: #5c728a;
+  font-weight: bold;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   margin: 0 5px;
   border-bottom: 2px solid transparent;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tab-btn:first-child {
+  margin-left: 330px;
 }
 
 .tab-btn.active {
   border-bottom-color: #e74c3c;
 }
 
+.overview-tab {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.overview-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-card {
+  background-color: white;
+  color: #2c3e50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 270px;
+  height: auto;
+  margin-left: 15px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
 .tab-content {
-  /* Add styles for the tab content container if needed */
 }
 
 .overview-tab,
@@ -103,9 +169,7 @@ body {
 .staff-tab,
 .trailer-tab,
 .reviews-tab {
-  /* Add specific styles for each tab's content as needed */
 }
 
 .similar-movies {
-  /* Add styles for the similar movies section */
 }
