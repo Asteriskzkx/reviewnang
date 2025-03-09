@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Review } from '../../models/review.model';
 
 @Component({
@@ -10,4 +10,6 @@ import { Review } from '../../models/review.model';
 export class ReviewCardComponent {
   @Input()
   review!: Review;
+  @Input()
+  showImage = true;
 }

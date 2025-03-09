@@ -9,6 +9,8 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { UserDropdownComponent } from './shared/user-dropdown/user-dropdown.component';
+import { SafeUrlPipe } from './pipes/safe-url/safe-url.pipe';
+import { MovieReviewsFilterPipe } from './pipes/movie-reviews-filter/movie-reviews-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UserDropdownComponent } from './shared/user-dropdown/user-dropdown.comp
     MovieCardComponent,
     ReviewCardComponent,
     MovieComponent,
-    UserDropdownComponent
+    UserDropdownComponent,
+    SafeUrlPipe,
+    MovieReviewsFilterPipe
   ],
   imports: [
     BrowserModule,

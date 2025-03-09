@@ -3,7 +3,7 @@ import { Movie } from '../models/movie.model';
 import { Review } from '../models/review.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MovieService {
   nowInTheaters: Movie[] = [
@@ -30,6 +30,85 @@ export class MovieService {
       director: 'Dougal Wilson',
       runtime: '1 hour 46 minutes',
       genres: ['Adventure', 'Comedy', 'Family', 'Mystery'],
+      format: 'Movie',
+      releaseDate: new Date('2025-02-14'),
+      countriesOfOrigin: ['United Kingdom', 'France', 'Japan', 'United States'],
+      languages: ['English'],
+      aka: [
+        'Paddington en Perú',
+        'Paddington 3',
+        'Paddington Bear 3',
+        'パディントン・イン・ペルー',
+      ],
+      filmingLocations: [
+        'Colombia',
+        'Peru',
+        'El Prado River, Prado Reservoir',
+        'England',
+      ],
+      productionCompanies: [
+        'StudioCanal',
+        'Columbia Pictures',
+        'Kinoshita Group',
+      ],
+      summaries: [
+        {
+          provider: 'Deadline Hollywood',
+          text: 'Paddington returns to Peru to visit his beloved Aunt Lucy, who now resides at the Home for Retired Bears. With the Brown Family in tow, a thrilling adventure ensues when a mystery plunges them into an unexpected journey through the Amazon rainforest and up to the mountain peaks of Peru.',
+        },
+        {
+          provider: 'STUDIOCANAL',
+          text: "Get ready for the journey of a lifetime as PADDINGTON IN PERU brings the world's most beloved bear back to his roots, his homeland Peru. Following the adventures of PADDINGTON and PADDINGTON 2, Paddington is still living happily with the Brown family in Windsor Gardens. When he receives a letter from the Reverend Mother, the blithe guitar strumming nun who runs the Home for Retired Bears, informing him that Aunt Lucy misses him dearly, he knows he simply must visit her as soon as possible. With his shiny new British passport in hand, Paddington is joined by the Browns, including the ever-resourceful Mrs. Bird, on an epic journey that none of them will ever forget. Along the way the group meet new friends, including the dashing riverboat captain Hunter and his daughter Gina. They join them on their thrilling escapades through the Amazon rainforest and up to the stunning mountain peaks of Peru. Together they encounter unexpected challenges, and Paddington begins to uncover surprising secrets about his past. Throughout the ups and downs, his unwavering optimism and kindness shine brightly in this brand-new Paddington cinematic adventure that reinforces the importance of family, and the joy of embracing one's heritage.",
+        },
+      ],
+      tagline: 'A little bear goes a long way.',
+      cast: [
+        {
+          name: 'Ben Whishaw',
+          imageUrl: 'assets/images/cast-pictures/1.jpg',
+          role: 'Paddington Bear',
+        },
+        {
+          name: 'Hugh Bonneville',
+          imageUrl: 'assets/images/cast-pictures/2.jpg',
+          role: 'Henry Brown',
+        },
+        {
+          name: 'Emily Mortimer',
+          imageUrl: 'assets/images/cast-pictures/3.jpg',
+          role: 'Mary Brown',
+        },
+        {
+          name: 'Imelda Staunton',
+          imageUrl: 'assets/images/cast-pictures/4.jpg',
+          role: 'Aunt Lucy',
+        },
+      ],
+      staff: [
+        {
+          name: 'Dougal Wilson',
+          imageUrl: 'assets/images/staff-pictures/1.jpg',
+          role: 'Director',
+        },
+        {
+          name: 'Mark Burton',
+          imageUrl: 'assets/images/staff-pictures/2.jpg',
+          role: 'Writer',
+        },
+        {
+          name: 'Jon Foster',
+          imageUrl: 'assets/images/staff-pictures/3.jpg',
+          role: 'Writer',
+        },
+        {
+          name: 'James Lamont',
+          imageUrl: 'assets/images/staff-pictures/4.webp',
+          role: 'Writer',
+        },
+      ],
+      trailerUrl:
+        'https://www.youtube.com/embed/NTvudSGfHRI?si=trXeknRNek1VCee8',
+      MPA: 'PG',
     },
     {
       title: 'Mickey 17',
@@ -181,6 +260,34 @@ export class MovieService {
       helpfulCount: 15,
       unhelpfulCount: 12,
       imageUrl: 'assets/images/movie-posters/1.jpg',
+    },
+    {
+      movieTitle: 'Paddington in Peru',
+      rating: '9/10',
+      reviewText: `Paddington in Peru is a delightful adventure that captures the spirit of the beloved bear. The film is heartwarming, funny, and beautifully animated, with a charming story that will appeal to audiences of all ages. Ben Whishaw is perfect as the voice of Paddington, bringing the character to life with warmth and humor. The supporting cast is equally strong, and the film's message of kindness and acceptance is both timely and timeless. A must-see for Paddington fans and anyone looking for a feel-good movie!`,
+      reviewer: 'BearLover123',
+      timeAgo: '1 hour ago',
+      helpfulCount: 45,
+      unhelpfulCount: 1,
+    },
+    {
+      movieTitle: 'Paddington in Peru',
+      rating: '8/10',
+      reviewText: `Paddington in Peru is a charming and heartwarming film that captures the essence of the beloved bear. The animation is beautiful, the voice acting is top-notch, and the story is engaging for both
+    children and adults. The film's message of kindness and acceptance is delivered with sincerity and humor, making it a joy to watch. While the plot may be predictable at times, the overall experience is delightful and sure to bring a smile to your face. A lovely movie for the whole family!`,
+      reviewer: 'FamilyFilmFan',
+      timeAgo: '3 hours ago',
+      helpfulCount: 32,
+      unhelpfulCount: 3,
+    },
+    {
+      movieTitle: 'Paddington in Peru',
+      rating: '7/10',
+      reviewText: `Paddington in Peru is a fun and heartwarming film that will delight fans of the series. The animation is colorful and engaging, and the voice cast does a great job bringing the characters to life. The story is sweet and entertaining, with plenty of humor and heartwarming moments. While the plot may be a bit formulaic, the film's positive message and lovable characters make it a worthwhile watch for families and Paddington fans.`,
+      reviewer: 'MovieManiac',
+      timeAgo: '1 day ago',
+      helpfulCount: 18,
+      unhelpfulCount: 5,
     },
   ];
 

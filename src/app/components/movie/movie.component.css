@@ -56,6 +56,13 @@ body {
   font-weight: bold;
 }
 
+.movie-provider {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9em;
+  /* margin-top: 5px;  */
+}
+
 .movie-tagline {
   font-style: italic;
   margin-bottom: 20px;
@@ -152,13 +159,143 @@ body {
   width: 270px;
   height: auto;
   margin-left: 15px;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: auto;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-card-rating {
+  padding: 5px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.overview-card-watchlist {
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview-card-text {
+  font-weight: normal;
+}
+
+.overview-card span {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.overview-card p {
+  margin: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.genre-list,
+.country-list,
+.language-list,
+.aka-list,
+.filming-locations-list,
+.production-companies-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overview-container {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.overview-cast {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  font-weight: bold;
+  padding-left: 45px;
+}
+
+.overview-cast-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: flex-start;
+}
+
+.overview-cast-card {
+  background-color: white;
+  color: #2c3e50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  height: 116px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: start;
   align-items: center;
   font-weight: bold;
   border: none;
   border-radius: 5px;
+  text-align: left;
+}
+
+.cast-picture {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 5px 0 0 5px;
+}
+
+.cast-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  height: 100%;
+  padding: 5px 0;
+}
+
+.cast-name {
+  margin: 0;
+}
+
+.cast-role {
+  margin: 0;
+  font-weight: normal;
+}
+
+.overview-trailer {
+  padding-left: 45px;
+  color: white;
+  font-weight: bold;
+}
+
+.overview-trailer iframe {
+  width: 76vw;
+  height: 100vh;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.overview-review {
+  padding-left: 45px;
+}
+
+.overview-review p {
+  font-weight: bold;
 }
 
 .tab-content {

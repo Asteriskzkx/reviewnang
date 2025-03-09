@@ -6,5 +6,5 @@ export interface Review {
     timeAgo: string;
     helpfulCount: number;
     unhelpfulCount: number;
-    imageUrl: string;
+    imageUrl?: string;
 }

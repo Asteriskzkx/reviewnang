@@ -1,12 +1,12 @@
 <div class="review-card">
-  <div class="review-header">
-    <img
+  <div class="review-header" >
+    <img *ngIf="showImage"
       [src]="review.imageUrl"
       alt="{{ review.movieTitle }}"
       class="review-image"
     />
     <div class="review-title-rating">
-      <div class="review-title" >{{ review.movieTitle }}</div>
+      <div class="review-title" *ngIf="showImage">{{ review.movieTitle }}</div>
       <div class="review-rating">
         <span class="star" *ngIf="review.rating.includes('★')">{{
           review.rating
