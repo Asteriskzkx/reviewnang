@@ -213,6 +213,24 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.genre-list li,
+.country-list li,
+.language-list li,
+.aka-list li,
+.filming-locations-list li,
+.production-companies-list li {
+  /* margin-left: 5px; */
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* border-inline: 0.5px outset #2c3e50;
+  border-block: 0.5px outset #2c3e50; */
+  width: 50%;
 }
 
 .overview-container {

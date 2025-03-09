@@ -215,7 +215,7 @@
       </div>
       <div class="review-list">
         <app-review-card
-          *ngFor="let review of movieService.latestReviews"
+          *ngFor="let review of movieService.latestReviews | slice : 0 : 5"
           [review]="review"
         ></app-review-card>
       </div>
@@ -638,7 +638,7 @@
         </div>
         <div class="review-list">
           <app-review-card
-            *ngFor="let review of movieService.latestReviews"
+            *ngFor="let review of movieService.latestReviews | slice : 0 : 5"
             [review]="review"
           ></app-review-card>
         </div>

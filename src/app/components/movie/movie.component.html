@@ -99,7 +99,7 @@
       <div class="tab-content">
         <div class="overview-tab" *ngIf="activeTab === 'overview'">
           <div class="overview-cards">
-            <div class="overview-card">
+            <div class="overview-card" *ngIf="movie.rating">
               <p class="overview-card-rating">
                 <svg
                   width="31"
@@ -116,7 +116,7 @@
                 &nbsp;{{ movie.rating }} ({{ movie.usersRating }})
               </p>
             </div>
-            <div class="overview-card">
+            <div class="overview-card" *ngIf="movie.watchlist">
               <p class="overview-card-watchlist">
                 <svg
                   width="33"

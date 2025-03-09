@@ -18,6 +18,84 @@ export class MovieService {
       genres: ['Action', 'Adventure', 'Sci-Fi'],
       description:
         'Sam Wilson, the new Captain America, finds himself in the middle of an international incident and must discover the motive behind a nefarious global plan.',
+      format: 'Movie',
+      releaseDate: new Date('2025-02-14'),
+      tagline: 'The future favors the brave.',
+      MPA: 'PG-13',
+      countriesOfOrigin: ['United States', 'Canada'],
+      languages: ['English'],
+      aka: [
+        'Captain America 4',
+        'Captain America: Brave New World',
+        'キャプテン・アメリカ：ブレイブ・ニュー・ワールド',
+      ],
+      filmingLocations: [
+        'Atlanta, Georgia',
+        'Washington, District of Columbia',
+        'Oaxaca',
+        'Tokyo',
+        'Jordan',
+      ],
+      productionCompanies: [
+        'Marvel Studios',
+        'British Columbia Film Commission',
+      ],
+      summaries: [
+        {
+          provider: 'Marvel Studios',
+          text: 'Sam Wilson, the new Captain America, finds himself in the middle of an international incident and must discover the motive behind a nefarious global plan.',
+        },
+        {
+          provider: 'Blazer346',
+          text: "Some time after the events of The Falcon and the Winter Soldier, Sam Wilson has now fully embraced his title as the new Captain America. Now Sam is summoned to the White House as the new president Ross wants to work with him on rebuilding the Avengers. But trouble ensues when Sam's friend Isaiah Bradley uncontrollably tries to assassinate the president and is framed for the attempt. Now Sam and his partner Joaquin Torres must race against time to uncover the true culprit and foil an evil plot that unwittingly involves President Ross",
+        },
+      ],
+      cast: [
+        {
+          name: 'Anthony Mackie',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/1.jpg',
+          role: 'Sam Wilson / Captain America',
+        },
+        {
+          name: 'Harrison Ford',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/2.jpg',
+          role: 'President Thaddeus Ross',
+        },
+        {
+          name: 'Danny Ramirez',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/3.jpg',
+          role: 'Joaquin Torres',
+        },
+        {
+          name: 'Shira Haas',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/4.jpg',
+          role: 'Ruth Bat-Seraph',
+        },
+      ],
+      staff: [
+        {
+          name: 'Julius Onah',
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/1.jpg',
+          role: 'Director',
+        },
+        {
+          name: 'Rob Edwards',
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/2.jpg',
+          role: 'Writer',
+        },
+        {
+          name: 'Malcolm Spellman',
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/3.jpg',
+          role: 'Writer',
+        },
+        {
+          name: 'Dalan Musson',
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/4.webp',
+          role: 'Writer',
+        }
+      ],
+      trailerUrl:
+        'https://www.youtube.com/embed/1pHDWnXmK7Y?si=M-brd95HTeUa2kEr',
     },
     {
       title: 'Paddington in Peru',
@@ -65,44 +143,44 @@ export class MovieService {
       cast: [
         {
           name: 'Ben Whishaw',
-          imageUrl: 'assets/images/cast-pictures/1.jpg',
+          imageUrl: 'assets/images/cast-pictures/Paddington in Peru/1.jpg',
           role: 'Paddington Bear',
         },
         {
           name: 'Hugh Bonneville',
-          imageUrl: 'assets/images/cast-pictures/2.jpg',
+          imageUrl: 'assets/images/cast-pictures/Paddington in Peru/2.jpg',
           role: 'Henry Brown',
         },
         {
           name: 'Emily Mortimer',
-          imageUrl: 'assets/images/cast-pictures/3.jpg',
+          imageUrl: 'assets/images/cast-pictures/Paddington in Peru/3.jpg',
           role: 'Mary Brown',
         },
         {
           name: 'Imelda Staunton',
-          imageUrl: 'assets/images/cast-pictures/4.jpg',
+          imageUrl: 'assets/images/cast-pictures/Paddington in Peru/4.jpg',
           role: 'Aunt Lucy',
         },
       ],
       staff: [
         {
           name: 'Dougal Wilson',
-          imageUrl: 'assets/images/staff-pictures/1.jpg',
+          imageUrl: 'assets/images/staff-pictures/Paddington in Peru/1.jpg',
           role: 'Director',
         },
         {
           name: 'Mark Burton',
-          imageUrl: 'assets/images/staff-pictures/2.jpg',
+          imageUrl: 'assets/images/staff-pictures/Paddington in Peru/2.jpg',
           role: 'Writer',
         },
         {
           name: 'Jon Foster',
-          imageUrl: 'assets/images/staff-pictures/3.jpg',
+          imageUrl: 'assets/images/staff-pictures/Paddington in Peru/3.jpg',
           role: 'Writer',
         },
         {
           name: 'James Lamont',
-          imageUrl: 'assets/images/staff-pictures/4.webp',
+          imageUrl: 'assets/images/staff-pictures/Paddington in Peru/4.webp',
           role: 'Writer',
         },
       ],

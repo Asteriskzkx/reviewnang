@@ -5,7 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: false,
 })
 export class MovieReviewsFilterPipe implements PipeTransform {
-  transform(reviews: any, movieTitle: string): any {
-    return reviews.filter((review: { movieTitle: string; }) => review.movieTitle === movieTitle);
+  transform(reviews: any, movieTitle: string, limit: number = 3): any {
+    return reviews
+      .filter((review: { movieTitle: string }) => review.movieTitle === movieTitle)
+      .slice(0, limit);
   }
 }
