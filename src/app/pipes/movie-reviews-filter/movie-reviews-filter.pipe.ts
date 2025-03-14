@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'movieReviewsFilter',
+  name: 'movie3ReviewsFilter',
   standalone: false,
 })
 export class MovieReviewsFilterPipe implements PipeTransform {
@@ -11,3 +11,15 @@ export class MovieReviewsFilterPipe implements PipeTransform {
       .slice(0, limit);
   }
 }
+
+@Pipe({
+  name: 'movieReviewsFilter',
+  standalone: false,
+})
+export class MovieAllReviewsFilterPipe implements PipeTransform {
+  transform(reviews: any, movieTitle: string): any {
+    return reviews
+      .filter((review: { movieTitle: string }) => review.movieTitle === movieTitle)
+  }
+}
+

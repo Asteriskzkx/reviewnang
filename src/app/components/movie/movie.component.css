@@ -324,6 +324,9 @@ body {
 .staff-tab,
 .trailer-tab,
 .reviews-tab {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
 }
 
 .similar-movies {

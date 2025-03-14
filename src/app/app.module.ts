@@ -10,7 +10,7 @@ import { ReviewCardComponent } from './components/review-card/review-card.compon
 import { MovieComponent } from './components/movie/movie.component';
 import { UserDropdownComponent } from './shared/user-dropdown/user-dropdown.component';
 import { SafeUrlPipe } from './pipes/safe-url/safe-url.pipe';
-import { MovieReviewsFilterPipe } from './pipes/movie-reviews-filter/movie-reviews-filter.pipe';
+import { MovieAllReviewsFilterPipe, MovieReviewsFilterPipe } from './pipes/movie-reviews-filter/movie-reviews-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { MovieReviewsFilterPipe } from './pipes/movie-reviews-filter/movie-revie
     MovieComponent,
     UserDropdownComponent,
     SafeUrlPipe,
-    MovieReviewsFilterPipe
+    MovieReviewsFilterPipe,
+    MovieAllReviewsFilterPipe
   ],
   imports: [
     BrowserModule,

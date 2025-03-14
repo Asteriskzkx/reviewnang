@@ -71,6 +71,51 @@ export class MovieService {
           imageUrl: 'assets/images/cast-pictures/Captain-America 4/4.jpg',
           role: 'Ruth Bat-Seraph',
         },
+        {
+          name: 'Carl Lumbly',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/5.jpg',
+          role: 'Isaiah Bradley',
+        },
+        {
+          name: 'Tim Blake Nelson',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/6.jpg',
+          role: 'Samuel Sterns',
+        },
+        {
+          name: 'Giancarlo Esposito',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/7.jpg',
+          role: 'Sidewinder',
+        },
+        {
+          name: 'Xosha Roquemore',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/8.jpg',
+          role: 'Leila Taylor',
+        },
+        {
+          name: 'Jóhannes Haukur Jóhannesson',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/9.jpg',
+          role: 'Copperhead',
+        },
+        {
+          name: 'William Mark McCullough',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/10.jpg',
+          role: 'Commander Dennis Dunphy',
+        },
+        {
+          name: 'Takehiro Hira',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/11.jpg',
+          role: 'Prime Minister Ozaki',
+        },
+        {
+          name: 'Harsh Nayyar',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/12.jpg',
+          role: 'Prime Minister Kapur',
+        },
+        {
+          name: 'Rick Espaillat',
+          imageUrl: 'assets/images/cast-pictures/Captain-America 4/13.jpg',
+          role: 'French President',
+        },
       ],
       staff: [
         {
@@ -92,7 +137,27 @@ export class MovieService {
           name: 'Dalan Musson',
           imageUrl: 'assets/images/staff-pictures/Captain-America 4/4.webp',
           role: 'Writer',
-        }
+        },
+        {
+          name: 'Peter Glanz',
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/5.jpg',
+          role: 'Writer',
+        },
+        {
+          name: 'Mitchell Bell',
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/6.jpg',
+          role: 'Co-Producer',
+        },
+        {
+          name: "Louis D'Esposito",
+          imageUrl: 'assets/images/staff-pictures/Captain-America 4/7.jpg',
+          role: 'Executive Producer',
+        },
+        {
+          name: 'Kyana F. Davidson',
+          imageUrl: 'assets/images/staff-pictures/Default/1.jpg',
+          role: 'Co-Producer',
+        },
       ],
       trailerUrl:
         'https://www.youtube.com/embed/1pHDWnXmK7Y?si=M-brd95HTeUa2kEr',
@@ -199,6 +264,68 @@ export class MovieService {
       director: 'Bong Joon Ho',
       runtime: '2 hours 19 minutes',
       genres: ['Adventure', 'Comedy', 'Fantasy', 'Sci-Fi'],
+      format: 'Movie',
+      releaseDate: new Date('2025-03-07'),
+      countriesOfOrigin: ['South Korea', 'United States'],
+      languages: ['English'],
+      aka: ['Mickey 17', 'ミッキー17', '米奇17號', 'Микки 17', '编号17'],
+      filmingLocations: [
+        'Warner Bros. Studios Leavesden, Warner Drive, Leavesden, Watford, Hertfordshire, England, UK',
+      ],
+      productionCompanies: [
+        'Warner Bros.',
+        'Plan B Entertainment',
+        'Offscreen',
+      ],
+      summaries: [
+        {
+          provider: 'Warner Bros.',
+          text: 'Adapted from the novel Mickey7 by Edward Ashton, this stars Robert Pattinson as an "expendable" - a disposable crew member on a space mission, selected for dangerous tasks because he can be renewed if his body dies, with his memories largely intact. With one regeneration, though, things go very wrong.',
+        },
+      ],
+      tagline: "He's dying to save mankind.",
+      MPA: 'R',
+      cast: [
+        {
+          name: 'Robert Pattinson',
+          imageUrl: 'assets/images/cast-pictures/Mickey 17/1.jpg',
+          role: 'Mickey Barnes',
+        },
+        {
+          name: 'Steven Yeun',
+          imageUrl: 'assets/images/cast-pictures/Mickey 17/2.jpg',
+          role: 'Timo',
+        },
+        {
+          name: 'Michael Monroe',
+          imageUrl: 'assets/images/cast-pictures/Mickey 17/3.jpg',
+          role: 'Matthew',
+        },
+        {
+          name: 'Patsy Ferran',
+          imageUrl: 'assets/images/cast-pictures/Mickey 17/4.jpg',
+          role: 'Dorothy',
+        },
+        {
+          name: 'Cameron Britton',
+          imageUrl: 'assets/images/cast-pictures/Mickey 17/5.jpg',
+          role: 'Arkady',
+        },
+      ],
+      staff: [
+        {
+          name: 'Bong Joon Ho',
+          imageUrl: 'assets/images/staff-pictures/Mickey 17/1.jpg',
+          role: 'Director',
+        },
+        {
+          name: 'Edward Ashton',
+          imageUrl: 'assets/images/staff-pictures/Default/1.jpg',
+          role: 'Writer',
+        }
+      ],
+      trailerUrl:
+        'https://www.youtube.com/embed/osYpGSz_0i4?si=ghpFcUzWCjjosUzH',
     },
     {
       title: 'The Monkey',
