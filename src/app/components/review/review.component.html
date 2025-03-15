@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg" style="background-color: 2c3e50">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: white" href="homepage">Review Nang</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <a class="nav-link" style="font-weight: bold; color: white">{{
+    currentUser?.username
+  }}</a>
+  <app-user-dropdown></app-user-dropdown>
+</nav>
+<div class="main-content mt-3">
+  <div class="row">
+    <!-- Left Section -->
+    <div class="col-md-8">
+      <div class="card p-3">
+        <label class="form-label">
+          <b>Write review</b> (Must be greater than 100 characters)
+        </label>
+        <textarea
+          class="form-control"
+          rows="4"
+          [(ngModel)]="reviewText"
+        ></textarea>
+        <p *ngIf="reviewError" class="text">
+          {{ reviewError }}
+        </p>
+
+        <label class="form-label mt-3">
+          <b>Review Summary</b> (Up to 120 characters and greater than 20
+          characters)
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="summaryText" />
+        <p *ngIf="summaryError" class="text">{{ summaryError }}</p>
+
+        <div class="mb-3">
+          <label class="form-label">Score</label>
+          <div class="star-rating">
+            <i
+              *ngFor="let star of stars; let i = index"
+              class="fa-star"
+              [ngClass]="i < (hoveredRating || rating) ? 'fas' : 'far'"
+              (click)="setRating(i + 1)"
+              (mouseover)="setHoveredRating(i + 1)"
+              (mouseleave)="resetHover()"
+            >
+            </i>
+          </div>
+        </div>
+
+        <div class="form-check mt-3">
+          <input type="checkbox" class="form-check-input" id="privateReview" />
+          <label for="privateReview" class="form-check-label">Private</label>
+        </div>
+
+        <button class="btn btn-primary mt-3 w-100" (click)="saveReview()">
+          Save
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Section (Preview) -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>Preview</h5>
+        <p class="text-muted">No preview available</p>
+      </div>
+    </div>
+  </div>
+</div>

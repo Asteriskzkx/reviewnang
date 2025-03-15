@@ -30,7 +30,7 @@
             alt="{{ movie.title }}"
             class="movie-poster"
           />
-          <button class="rate-btn">
+          <button class="rate-btn" [routerLink]="'/review'">
             <svg
               width="31"
               height="30"
@@ -278,7 +278,7 @@
               <iframe
                 width="560"
                 height="315"
-                [src]="movie?.trailerUrl ?? '' | safeUrl"
+                [src]="movie.trailerUrl ?? '' | safeUrl"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -592,10 +592,7 @@
             <div class="overview-cast-cards">
               <div
                 class="overview-cast-card"
-                *ngFor="
-                  let staff of movie.staff;
-                  let i = index
-                "
+                *ngFor="let staff of movie.staff; let i = index"
               >
                 <img
                   [src]="staff.imageUrl"
@@ -749,7 +746,7 @@
             <iframe
               width="560"
               height="315"
-              [src]="movie?.trailerUrl ?? '' | safeUrl"
+              [src]="movie.trailerUrl ?? '' | safeUrl"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
