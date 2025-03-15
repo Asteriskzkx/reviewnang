@@ -11,6 +11,9 @@ import { MovieComponent } from './components/movie/movie.component';
 import { UserDropdownComponent } from './shared/user-dropdown/user-dropdown.component';
 import { SafeUrlPipe } from './pipes/safe-url/safe-url.pipe';
 import { MovieAllReviewsFilterPipe, MovieReviewsFilterPipe } from './pipes/movie-reviews-filter/movie-reviews-filter.pipe';
+import { ReviewComponent } from './components/review/review.component';
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,16 @@ import { MovieAllReviewsFilterPipe, MovieReviewsFilterPipe } from './pipes/movie
     UserDropdownComponent,
     SafeUrlPipe,
     MovieReviewsFilterPipe,
-    MovieAllReviewsFilterPipe
+    MovieAllReviewsFilterPipe,
+    ReviewComponent,
+    SignupComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
   ],

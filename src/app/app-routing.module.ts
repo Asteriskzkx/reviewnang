@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { ReviewComponent } from './components/review/review.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'movie/:title', component: MovieComponent },
+  { path: 'review' , component: ReviewComponent },
+  { path: 'signup' , component: SignupComponent},
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
 ];
 
