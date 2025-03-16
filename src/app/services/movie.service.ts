@@ -575,4 +575,79 @@ export class MovieService {
   ];
 
   constructor() { }
+
+  /**
+  * Add a new review to the collection
+  * @param review The review to add
+  */
+  addReview(review: Review): void {
+    // Add to the beginning of the array
+    this.latestReviews.unshift(review);
+
+    // Save reviews to localStorage
+    this.saveReviews();
+  }
+
+  /**
+   * Get all reviews for a specific movie
+   * @param movieTitle The title of the movie
+   * @returns Array of reviews for the movie
+   */
+  getReviewsForMovie(movieTitle: string): Review[] {
+    return this.latestReviews.filter(review => review.movieTitle === movieTitle);
+  }
+
+
+  /**
+   * Mark a review as helpful
+   * @param index The index of the review
+   */
+  markReviewHelpful(index: number): void {
+    if (index >= 0 && index < this.latestReviews.length) {
+      this.latestReviews[index].helpfulCount++;
+      this.saveReviews();
+    }
+  }
+
+  /**
+   * Mark a review as unhelpful
+   * @param index The index of the review
+   */
+  markReviewUnhelpful(index: number): void {
+    if (index >= 0 && index < this.latestReviews.length) {
+      this.latestReviews[index].unhelpfulCount++;
+      this.saveReviews();
+    }
+  }
+
+  /**
+   * Save reviews to localStorage
+   */
+  private saveReviews(): void {
+    try {
+      localStorage.setItem('reviewNang_reviews', JSON.stringify(this.latestReviews));
+    } catch (e) {
+      console.error('Error saving reviews to localStorage', e);
+    }
+  }
+
+  /**
+   * Load reviews from localStorage
+   */
+  private loadReviews(): void {
+    try {
+      const savedReviews = localStorage.getItem('reviewNang_reviews');
+      if (savedReviews) {
+        // Merge saved reviews with default reviews
+        const parsedReviews = JSON.parse(savedReviews);
+
+        // Keep the original reviews if we don't have saved reviews
+        if (parsedReviews && parsedReviews.length > 0) {
+          this.latestReviews = parsedReviews;
+        }
+      }
+    } catch (e) {
+      console.error('Error loading reviews from localStorage', e);
+    }
+  }
 }

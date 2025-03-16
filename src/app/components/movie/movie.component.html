@@ -30,7 +30,12 @@
             alt="{{ movie.title }}"
             class="movie-poster"
           />
-          <button class="rate-btn" [routerLink]="'/review'">
+          <!-- Update the Rate This button to pass movie title as parameter -->
+          <button
+            class="rate-btn"
+            [routerLink]="'/review'"
+            [queryParams]="{ movie: movie.title }"
+          >
             <svg
               width="31"
               height="30"
