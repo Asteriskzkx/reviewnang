@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-review',
@@ -8,6 +8,8 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './review.component.html',
   styleUrl: './review.component.css'
 })
+
+
 export class ReviewComponent {
 
   reviewText: string = '';
@@ -20,9 +22,11 @@ export class ReviewComponent {
   hoveredRating = 0; // คะแนนที่ hover อยู่
   stars = Array(10).fill(0); // สร้าง array 10 ช่องสำหรับดาว
   currentUser: any;
+  
+
 
   
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService,private location: Location){}
   ngOnInit(): void {
 
 
@@ -32,7 +36,10 @@ export class ReviewComponent {
     });
   }
 
-
+  goBack(): void {
+    this.location.back(); // Navigates to the previous page
+  }
+  
   updatePreview(): void {
     console.log('Preview Updated');
   }
