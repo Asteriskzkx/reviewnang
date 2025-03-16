@@ -31,7 +31,6 @@ export class ReviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Get the movie title from query parameters if available
     this.route.queryParams.subscribe((params) => {
       if (params['movie']) {
         this.movieTitle = params['movie'];
@@ -90,7 +89,6 @@ export class ReviewComponent implements OnInit {
       return;
     }
 
-    // Get private status
     const privateReviewCheckbox = document.getElementById(
       'privateReview'
     ) as HTMLInputElement;
@@ -98,9 +96,8 @@ export class ReviewComponent implements OnInit {
       ? privateReviewCheckbox.checked
       : false;
 
-    // Create a new review object
     const newReview: Review = {
-      movieTitle: this.movieTitle || 'Captain America: Brave New World', // Default if no movie specified
+      movieTitle: this.movieTitle || 'Captain America: Brave New World',
       rating: `${this.rating}/10`,
       reviewText: this.reviewText,
       reviewer: this.currentUser?.username || 'Margarete',
@@ -110,15 +107,12 @@ export class ReviewComponent implements OnInit {
       imageUrl: this.getMovieImageUrl(this.movieTitle),
     };
 
-    // Add the review to the movie service
     this.movieService.latestReviews.unshift(newReview);
 
     console.log('Review saved:', newReview);
 
-    // Show success message
     alert('Review saved successfully!');
 
-    // Navigate back to the movie page if a movie title was provided
     if (this.movieTitle) {
       this.router.navigate(['/movie', this.movieTitle]);
     } else {
@@ -126,11 +120,8 @@ export class ReviewComponent implements OnInit {
     }
   }
 
-  /**
-   * Get the image URL for the movie being reviewed
-   */
+
   public getMovieImageUrl(movieTitle: string): string {
-    // Find the movie in the service
     const allMovies = [
       ...this.movieService.nowInTheaters,
       ...this.movieService.upcomingMovies,
@@ -138,7 +129,6 @@ export class ReviewComponent implements OnInit {
 
     const movie = allMovies.find((m) => m.title === movieTitle);
 
-    // Return the movie image URL or a default one
     return movie?.imageUrl || 'assets/images/movie-posters/1.jpg';
   }
 
