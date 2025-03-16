@@ -30,7 +30,6 @@
             alt="{{ movie.title }}"
             class="movie-poster"
           />
-          <!-- Update the Rate This button to pass movie title as parameter -->
           <button
             class="rate-btn"
             [routerLink]="'/review'"
@@ -896,7 +895,6 @@
             </div>
           </div>
           <div class="overview-review">
-            <!-- <p>User Reviews</p> -->
             <app-review-card
               *ngFor="
                 let review of movieService.latestReviews

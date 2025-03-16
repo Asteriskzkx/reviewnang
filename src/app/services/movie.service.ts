@@ -581,10 +581,8 @@ export class MovieService {
   * @param review The review to add
   */
   addReview(review: Review): void {
-    // Add to the beginning of the array
     this.latestReviews.unshift(review);
 
-    // Save reviews to localStorage
     this.saveReviews();
   }
 
@@ -600,7 +598,7 @@ export class MovieService {
 
   /**
    * Mark a review as helpful
-   * @param index The index of the review
+   * @param index 
    */
   markReviewHelpful(index: number): void {
     if (index >= 0 && index < this.latestReviews.length) {
@@ -620,9 +618,7 @@ export class MovieService {
     }
   }
 
-  /**
-   * Save reviews to localStorage
-   */
+
   private saveReviews(): void {
     try {
       localStorage.setItem('reviewNang_reviews', JSON.stringify(this.latestReviews));
@@ -631,17 +627,13 @@ export class MovieService {
     }
   }
 
-  /**
-   * Load reviews from localStorage
-   */
+
   private loadReviews(): void {
     try {
       const savedReviews = localStorage.getItem('reviewNang_reviews');
       if (savedReviews) {
-        // Merge saved reviews with default reviews
         const parsedReviews = JSON.parse(savedReviews);
 
-        // Keep the original reviews if we don't have saved reviews
         if (parsedReviews && parsedReviews.length > 0) {
           this.latestReviews = parsedReviews;
         }
