@@ -322,7 +322,7 @@ export class MovieService {
           name: 'Edward Ashton',
           imageUrl: 'assets/images/staff-pictures/Default/1.jpg',
           role: 'Writer',
-        }
+        },
       ],
       trailerUrl:
         'https://www.youtube.com/embed/osYpGSz_0i4?si=ghpFcUzWCjjosUzH',
@@ -338,6 +338,84 @@ export class MovieService {
       director: 'Osgood Perkins',
       genres: ['Horror'],
       runtime: '1 hour 38 minutes',
+      format: 'Movie',
+      releaseDate: new Date('2025-02-21'),
+      countriesOfOrigin: ['United States', 'United Kingdom', 'Canada'],
+      languages: ['English'],
+      aka: ['The Monkey', 'El mono', 'O Macaco', '史蒂芬金之猴子', '猴子'],
+      filmingLocations: [
+        'Vancouver, British Columbia, Canada',
+        'Maple Ridge, British Columbia, Canada',
+      ],
+      productionCompanies: [
+        'Atomic Monster',
+        'Black Bear International',
+        'British Columbia Film Commission',
+      ],
+      MPA: 'R',
+      summaries: [
+        {
+          provider: 'Atomic Monster',
+          text: "When twin brothers Bill and Hal find their father's old monkey toy in the attic, a series of gruesome deaths start. The siblings decide to throw the toy away and move on with their lives, growing apart over the years.",
+        },
+      ],
+      tagline: "Everybody dies. And that's fucked up.",
+      trailerUrl:
+        'https://www.youtube.com/embed/husMGbXEIho?si=qmwW18BR1m620iGS',
+      cast: [
+        {
+          name: 'Theo James',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/1.jpg',
+          role: 'Hal • Bill',
+        },
+        {
+          name: 'Tatiana Maslany',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/2.jpg',
+          role: 'Lois',
+        },
+        {
+          name: 'Christian Convery',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/3.jpg',
+          role: 'Young Hal • Young Bill',
+        },
+        {
+          name: "Colin O'Brien",
+          imageUrl: 'assets/images/cast-pictures/The Monkey/4.jpg',
+          role: 'Petey',
+        },
+        {
+          name: 'Elijah Wood',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/5.jpg',
+          role: 'Ted',
+        },
+        {
+          name: 'Rohan Campbell',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/6.jpg',
+          role: 'Thrasher • Ricky',
+        },
+        {
+          name: 'Sarah Levy',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/7.jpg',
+          role: 'Aunt Ida',
+        },
+        {
+          name: 'Osgood Perkins',
+          imageUrl: 'assets/images/cast-pictures/The Monkey/8.jpg',
+          role: 'Uncle Chip',
+        },
+      ],
+      staff: [
+        {
+          name: 'Osgood Perkins',
+          imageUrl: 'assets/images/staff-pictures/The Monkey/1.jpg',
+          role: 'Director',
+        },
+        {
+          name: 'Stephen King',
+          imageUrl: 'assets/images/staff-pictures/The Monkey/2.jpg',
+          role: 'Writer',
+        }
+      ],
     },
     {
       title: 'Dog Man',
