@@ -151,16 +151,29 @@
           </div>
           <div class="preview-content">
             <div *ngIf="reviewText || summaryText; else noPreview">
-              <h4>{{ summaryText || 'Review Summary' }}</h4>
-              <div class="d-flex my-2">
-                <div class="star-rating">
-                  <i *ngFor="let star of [1,2,3,4,5]"
-                     class="fas fa-star"
-                     [style.color]="star <= (rating/2) ? 'var(--star-color)' : 'var(--star-inactive)'"></i>
+              <div class="d-flex align-items-start mb-3">
+                <img *ngIf="getMovieImageUrl(movieTitle)" 
+                     [src]="getMovieImageUrl(movieTitle)" 
+                     alt="Movie poster" 
+                     style="width: 60px; height: auto; margin-right: 15px; border-radius: 4px;">
+                <div>
+                  <h6 *ngIf="movieTitle" class="mb-1">{{ movieTitle }}</h6>
+                  <h4>{{ summaryText || 'Review Summary' }}</h4>
+                  <div class="d-flex my-2">
+                    <div class="star-rating">
+                      <i *ngFor="let star of [1,2,3,4,5]"
+                        class="fas fa-star"
+                        [style.color]="star <= (rating/2) ? 'var(--star-color)' : 'var(--star-inactive)'"></i>
+                    </div>
+                    <span class="ms-2">{{ rating }} / 10</span>
+                  </div>
+                  <p class="text-muted small">By {{ currentUser?.username || 'Margarete' }}</p>
                 </div>
-                <span class="ms-2">{{ rating }} / 10</span>
               </div>
               <p>{{ reviewText || 'Your review will appear here...' }}</p>
+              <div *ngIf="privateReview" class="alert alert-info mt-3 py-2">
+                <i class="fas fa-lock me-2"></i> This review will be private
+              </div>
             </div>
             <ng-template #noPreview>
               <p class="text-muted">No preview available</p>
