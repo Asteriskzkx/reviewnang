@@ -1,92 +1,175 @@
-<nav class="navbar navbar-expand-lg" style="background-color: 2c3e50">
-  <div class="container-fluid">
-    <a class="navbar-brand" style="color: white" href="homepage">Review Nang</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReviewNang - Write Review</title>
+</head>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-  <a class="nav-link" style="font-weight: bold; color: white">{{
-    currentUser?.username
-  }}</a>
-  <app-user-dropdown></app-user-dropdown>
-</nav>
-<div class="main-content mt-3">
-  <div class="row">
-    <!-- Left Section -->
-    <div class="col-md-8">
-      <div class="card p-3">
-        <label class="form-label">
-          <b>Write review</b> (Must be greater than 100 characters)
-        </label>
-        <textarea
-          class="form-control"
-          rows="4"
-          [(ngModel)]="reviewText"
-        ></textarea>
-        <p *ngIf="reviewError" class="text">
-          {{ reviewError }}
-        </p>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/homepage">Review Nang</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="ms-auto d-flex align-items-center">
 
-        <label class="form-label mt-3">
-          <b>Review Summary</b> (Up to 120 characters and greater than 20
-          characters)
-        </label>
-        <input type="text" class="form-control" [(ngModel)]="summaryText" />
-        <p *ngIf="summaryError" class="text">{{ summaryError }}</p>
-
-        <div class="mb-3">
-          <label class="form-label">Score</label>
-          <div class="star-rating">
-            <i
-              *ngFor="let star of stars; let i = index"
-              class="fa-star"
-              [ngClass]="i < (hoveredRating || rating) ? 'fas' : 'far'"
-              (click)="setRating(i + 1)"
-              (mouseover)="setHoveredRating(i + 1)"
-              (mouseleave)="resetHover()"
-            >
-            </i>
+          
+          <a class="nav-link" href="#">
+            <span>{{ currentUser?.username || 'Margarete' }}</span>
+          </a>
+          
+          <div class="user-dropdown">
+            <app-user-dropdown></app-user-dropdown>
           </div>
         </div>
-
-        <div class="form-check mt-3">
-          <input type="checkbox" class="form-check-input" id="privateReview" />
-          <label for="privateReview" class="form-check-label">Private</label>
-        </div>
-
-        <button class="btn btn-primary mt-3 w-100" (click)="saveReview()">
-          Save
-        </button>
       </div>
     </div>
+  </nav>
 
-    <!-- Right Section (Preview) -->
-    <div class="col-md-4">
-      <div class="card p-3">
-        <h5>Preview</h5>
-        <p class="text-muted">No preview available</p>
+  <div class="page-container">
+    <a href="javascript:history.back()" class="back-button">
+      <i class="fas fa-arrow-left"></i> Back
+    </a>
+    
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="editor-container mb-4">
+          <div class="toolbar">
+            <button class="toolbar-button" title="Bold">
+              <i class="fas fa-bold"></i>
+            </button>
+            <button class="toolbar-button" title="Italic">
+              <i class="fas fa-italic"></i>
+            </button>
+            <button class="toolbar-button" title="Strikethrough">
+              <i class="fas fa-strikethrough"></i>
+            </button>
+            <button class="toolbar-button" title="Link">
+              <i class="fas fa-link"></i>
+            </button>
+            <button class="toolbar-button" title="Quote">
+              <i class="fas fa-quote-right"></i>
+            </button>
+            <button class="toolbar-button" title="Image">
+              <i class="fas fa-image"></i>
+            </button>
+            <button class="toolbar-button" title="Video">
+              <i class="fas fa-video"></i>
+            </button>
+            <button class="toolbar-button" title="Code">
+              <i class="fas fa-code"></i>
+            </button>
+            <button class="toolbar-button" title="Bulleted List">
+              <i class="fas fa-list-ul"></i>
+            </button>
+            <button class="toolbar-button" title="Numbered List">
+              <i class="fas fa-list-ol"></i>
+            </button>
+            <button class="toolbar-button" title="Heading">
+              <i class="fas fa-heading"></i>
+            </button>
+            <button class="toolbar-button" title="Horizontal Rule">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+          <div class="editor-content">
+            <div class="textarea-container">
+              <textarea 
+                class="textarea-field" 
+                rows="10" 
+                [(ngModel)]="reviewText" 
+                placeholder="Write review (Must be greater than 100 characters)"
+              ></textarea>
+              <span class="char-counter">{{ reviewText?.length || 0 }}/100 characters min</span>
+            </div>
+          </div>
+        </div>
+        
+        <form class="review-form">
+          <div class="form-section">
+            <label for="summary" class="form-label">Review Summary</label>
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="summary" 
+                class="input-field" 
+                [(ngModel)]="summaryText" 
+                name="summary"
+                placeholder="Brief summary of your review (20-120 characters)"
+              >
+              <span class="char-counter">{{ summaryText?.length || 0 }}/120 characters max</span>
+            </div>
+            <div *ngIf="summaryError" class="error-message">
+              {{ summaryError }}
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <label class="form-label">Score</label>
+            <div class="star-rating">
+              <i *ngFor="let star of [1,2,3,4,5,6,7,8,9,10]"
+                 class="fas fa-star star-icon"
+                 [ngClass]="{'active': star <= (hoveredRating || rating)}"
+                 (click)="setRating(star)"
+                 (mouseover)="setHoveredRating(star)"
+                 (mouseleave)="resetHover()"></i>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <div class="checkbox-container">
+              <input type="checkbox" id="privateReview" class="checkbox-input">
+              <label for="privateReview" class="checkbox-label">Private</label>
+            </div>
+          </div>
+          
+          <div *ngIf="reviewError" class="error-message">
+            {{ reviewError }}
+          </div>
+          
+          <button 
+            type="button" 
+            class="save-button" 
+            (click)="saveReview()"
+            [disabled]="!isValidForm()"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="preview-container">
+          <div class="preview-header">
+            <h5 class="preview-title">Preview</h5>
+          </div>
+          <div class="preview-content">
+            <div *ngIf="reviewText || summaryText; else noPreview">
+              <h4>{{ summaryText || 'Review Summary' }}</h4>
+              <div class="d-flex my-2">
+                <div class="star-rating">
+                  <i *ngFor="let star of [1,2,3,4,5]"
+                     class="fas fa-star"
+                     [style.color]="star <= (rating/2) ? 'var(--star-color)' : 'var(--star-inactive)'"></i>
+                </div>
+                <span class="ms-2">{{ rating }} / 10</span>
+              </div>
+              <p>{{ reviewText || 'Your review will appear here...' }}</p>
+            </div>
+            <ng-template #noPreview>
+              <p class="text-muted">No preview available</p>
+            </ng-template>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+</body>
+</html>
