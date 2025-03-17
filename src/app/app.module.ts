@@ -14,6 +14,7 @@ import { MovieAllReviewsFilterPipe, MovieReviewsFilterPipe } from './pipes/movie
 import { ReviewComponent } from './components/review/review.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './components/signup/signup.component';
+import { SettingComponent } from './components/setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SignupComponent } from './components/signup/signup.component';
     MovieReviewsFilterPipe,
     MovieAllReviewsFilterPipe,
     ReviewComponent,
-    SignupComponent
+    SignupComponent,
+    SettingComponent
     
   ],
   imports: [
