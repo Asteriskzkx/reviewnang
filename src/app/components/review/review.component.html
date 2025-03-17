@@ -86,7 +86,7 @@
                 [(ngModel)]="reviewText" 
                 placeholder="Write review (Must be greater than 100 characters)"
               ></textarea>
-              <span class="char-counter">{{ reviewText?.length || 0 }}/100 characters min</span>
+              <span class="char-counter">{{ reviewText.length || 0 }}/100 characters min</span>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
                 name="summary"
                 placeholder="Brief summary of your review (20-120 characters)"
               >
-              <span class="char-counter">{{ summaryText?.length || 0 }}/120 characters max</span>
+              <span class="char-counter">{{ summaryText.length || 0 }}/120 characters max</span>
             </div>
             <div *ngIf="summaryError" class="error-message">
               {{ summaryError }}
